@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GREEN-API Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="left">
+        <h1>GREEN-API Tester</h1>
+        <p class="subtitle">Вызовы: getSettings, getStateInstance, sendMessage, sendFileByUrl</p>
+
+        <div class="group">
+          <p class="group-title">Параметры подключения</p>
+          <div class="field">
+            <label for="idInstance">idInstance</label>
+            <input id="idInstance" type="text" placeholder="например: 1101000001" />
+          </div>
+          <div class="field">
+            <label for="apiTokenInstance">ApiTokenInstance</label>
+            <input id="apiTokenInstance" type="text" placeholder="вставьте токен из личного кабинета" />
+          </div>
+          <div class="btn-row">
+            <button class="btn secondary" id="getSettingsBtn">getSettings</button>
+            <button class="btn secondary" id="getStateInstanceBtn">getStateInstance</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <p class="group-title">sendMessage</p>
+          <div class="field">
+            <label for="chatId">chatId</label>
+            <input id="chatId" type="text" placeholder="79991234567@c.us" />
+          </div>
+          <div class="field">
+            <label for="message">Текст сообщения</label>
+            <textarea id="message" placeholder="Введите сообщение"></textarea>
+          </div>
+          <button class="btn" id="sendMessageBtn">sendMessage</button>
+        </div>
+
+        <div class="group">
+          <p class="group-title">sendFileByUrl</p>
+          <div class="field">
+            <label for="fileChatId">chatId</label>
+            <input id="fileChatId" type="text" placeholder="79991234567@c.us" />
+          </div>
+          <div class="field">
+            <label for="fileUrl">URL файла</label>
+            <input id="fileUrl" type="text" placeholder="https://example.com/file.pdf" />
+          </div>
+          <div class="field">
+            <label for="fileName">Имя файла (необязательно)</label>
+            <input id="fileName" type="text" placeholder="file.pdf (можно оставить пустым)" />
+          </div>
+          <button class="btn" id="sendFileByUrlBtn">sendFileByUrl</button>
+        </div>
+      </section>
+
+      <section class="right">
+        <h2 class="response-title">Ответ API (read-only)</h2>
+        <textarea id="responseBox" class="response" readonly></textarea>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
